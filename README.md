@@ -21,7 +21,7 @@ No installation or dependencies are required.
 
 ## Live Demo
 
-https://your-github-pages-link/
+https://umphemba.github.io/iphone17checkout/
 
 ## Disclaimer
 
