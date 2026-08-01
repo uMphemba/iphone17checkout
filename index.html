@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>iTech — iPhone 17 Sky Blue</title>
+<meta name="description" content="iPhone 17 in Sky Blue. Powerful. Beautiful. Built for Apple Intelligence." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #eef7ff;
+    --bg-2: #f8fbff;
+    --panel: rgba(255,255,255,0.7);
+    --panel-solid: #ffffff;
+    --border: rgba(215,233,249,0.7);
+    --border-strong: #d7e9f9;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --muted-2: #86868b;
+    --accent-1: #a7d8ff;
+    --accent-2: #7cc5ff;
+    --accent-mid: #ddf2ff;
+    --good: #34c759;
+    --good-dim: rgba(52,199,89,0.12);
+    --radius: 22px;
+    --radius-sm: 14px;
+    --maxw: 1120px;
+    --grad: linear-gradient(145deg, #6bb4f0 0%, #4a9fe0 70%, #2d8acf 100%);
+    --grad-soft: linear-gradient(145deg, rgba(167,216,255,0.3), rgba(124,197,255,0.15));
+    --shadow: 0 20px 60px -16px rgba(0, 0, 0, 0.08), 0 8px 24px -8px rgba(0, 20, 40, 0.06);
+    --shadow-sm: 0 4px 12px -6px rgba(0, 20, 40, 0.06);
+    --ff-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --ff-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--ff-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .glow {
+    position: fixed;
+    inset: -20vmax;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.35;
+  }
+  .glow span {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+  }
+  .glow .g1 { width: 50vmax; height: 50vmax; left: -10vmax; top: -12vmax; background: radial-gradient(circle, rgba(167,216,255,0.55), transparent 65%); animation: floatGlow1 28s ease-in-out infinite; }
+  .glow .g2 { width: 42vmax; height: 42vmax; right: -6vmax; bottom: -8vmax; background: radial-gradient(circle, rgba(124,197,255,0.4), transparent 60%); animation: floatGlow2 34s ease-in-out infinite; }
+  .glow .g3 { width: 36vmax; height: 36vmax; left: 30vmax; top: 20vmax; background: radial-gradient(circle, rgba(221,242,255,0.5), transparent 60%); animation: floatGlow3 40s ease-in-out infinite; }
+
+  @keyframes floatGlow1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(4vmax, 6vmax) scale(1.1); } }
+  @keyframes floatGlow2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-5vmax, -4vmax) scale(1.08); } }
+  @keyframes floatGlow3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(3vmax, -5vmax) scale(1.12); } }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .brand .mark {
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    border-radius: 12px;
+    background: var(--grad);
+    box-shadow: 0 6px 16px -6px rgba(45,138,207,0.5);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .secure-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--panel);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: var(--shadow-sm);
+  }
+  .secure-pill svg { width: 14px; height: 14px; color: var(--good); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 940px) {
+    .grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; gap: 30px; }
+  }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 24px 70px -18px rgba(0, 20, 40, 0.12);
+  }
+
+  .hero {
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  @media (min-width: 520px) {
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      padding: 32px;
+      gap: 28px;
+    }
+  }
+
+  .phone {
+    aspect-ratio: 1 / 1;
+    max-height: 300px;
+    border-radius: 18px;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.5s ease;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 260px;
+  }
+  .phone:hover {
+    transform: scale(1.02) translateY(-4px);
+  }
+  .phone img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 30px rgba(0,40,80,0.15));
+    transition: transform 0.4s ease;
+  }
+  .phone:hover img {
+    transform: scale(1.02);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eyebrow {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: clamp(24px, 4.2vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    max-width: 46ch;
+  }
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .stars { color: #f5b342; font-size: 15px; letter-spacing: 1px; }
+  .rating .score { font-weight: 700; font-size: 14px; }
+  .rating .count { color: var(--muted); font-size: 13px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 6px 2px 14px;
+  }
+  .sec-head h2 {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+  .sec-head .hint { font-size: 12.5px; color: var(--muted); }
+
+  .stack { display: flex; flex-direction: column; gap: 12px; padding: 6px 0 0; }
+
+  .tier {
+    position: relative;
+    display: grid;
+    grid-template-columns: 26px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 16px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.3s ease;
+  }
+  .tier:hover { transform: translateY(-2px); border-color: var(--accent-1); background: rgba(255,255,255,0.7); }
+  .tier:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+  .tier.selected {
+    border-color: var(--accent-2);
+    background: var(--accent-mid);
+    box-shadow: 0 0 0 1px rgba(124,197,255,0.3), 0 12px 32px -14px rgba(124,197,255,0.4);
+  }
+  .radio {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--muted-2);
+    display: grid; place-items: center;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .tier.selected .radio { border-color: var(--accent-2); background: var(--grad); }
+  .radio .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #fff; transform: scale(0);
+    transition: transform 0.2s cubic-bezier(.2,1.4,.4,1);
+  }
+  .tier.selected .radio .dot { transform: scale(1); }
+
+  .tier .name { font-family: var(--ff-display); font-weight: 600; font-size: 15.5px; }
+  .tier .meta { color: var(--muted); font-size: 12.5px; margin-top: 2px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .tier .per { color: var(--accent-2); font-weight: 600; }
+  .tier .price-col { text-align: right; }
+  .tier .price {
+    font-family: var(--ff-display);
+    font-weight: 700; font-size: 19px;
+    font-variant-numeric: tabular-nums;
+  }
+  .tier .was {
+    color: var(--muted-2);
+    text-decoration: line-through;
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .save-chip {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    color: var(--good);
+    background: var(--good-dim);
+    border: 1px solid rgba(52,199,89,0.2);
+    padding: 2px 8px; border-radius: 999px;
+    margin-top: 4px;
+  }
+  .badge {
+    position: absolute;
+    top: -10px; left: 16px;
+    font-size: 10px; font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--grad);
+    padding: 4px 10px;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px -6px rgba(45,138,207,0.6);
+  }
+
+  .gifts-card { padding: 20px; }
+  .gift-meter {
+    height: 6px; border-radius: 999px;
+    background: rgba(0,0,0,0.04);
+    overflow: hidden; margin: 4px 0 16px;
+  }
+  .gift-meter span {
+    display: block; height: 100%;
+    width: 0%;
+    background: var(--grad);
+    border-radius: 999px;
+    transition: width 0.5s cubic-bezier(.3,.9,.3,1);
+  }
+  .gifts { display: grid; gap: 10px; grid-template-columns: 1fr; }
+  @media (min-width: 560px) { .gifts { grid-template-columns: 1fr 1fr; } }
+  .gift {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.4);
+    transition: opacity 0.3s ease, border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  }
+  .gift.locked { opacity: 0.42; }
+  .gift.unlocked {
+    border-color: rgba(52,199,89,0.3);
+    background: var(--good-dim);
+  }
+  .gift .ico {
+    width: 34px; height: 34px; flex: none;
+    display: grid; place-items: center;
+    border-radius: 9px;
+    background: rgba(0,0,0,0.03);
+    font-size: 17px;
+  }
+  .gift.unlocked .ico { background: rgba(52,199,89,0.12); }
+  .gift .g-name { font-weight: 600; font-size: 13.5px; }
+  .gift .g-req { font-size: 11.5px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+  .gift.unlocked .g-req { color: var(--good); }
+  .gift .g-val {
+    margin-left: auto;
+    font-weight: 700; font-size: 12.5px;
+    color: var(--muted-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .gift.unlocked .g-val { color: var(--good); }
+
+  .summary { padding: 24px; }
+  @media (min-width: 940px) { .summary-wrap { position: sticky; top: 24px; } }
+  .summary h2 {
+    font-family: var(--ff-display);
+    font-weight: 600; font-size: 16px;
+    margin-bottom: 16px;
+  }
+  .line {
+    display: flex; align-items: baseline;
+    justify-content: space-between; gap: 12px;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  .line + .line { border-top: 1px dashed var(--border); }
+  .line .lbl { color: var(--muted); display: flex; flex-direction: column; }
+  .line .lbl small { font-size: 11.5px; color: var(--muted-2); }
+  .line .val { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .line .val.free { color: var(--good); }
+  .total-line {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-top: 14px; padding-top: 16px;
+    border-top: 1px solid var(--border-strong);
+  }
+  .total-line .t-lbl { font-family: var(--ff-display); font-weight: 600; font-size: 15px; }
+  .total-line .t-val {
+    font-family: var(--ff-display); font-weight: 800;
+    font-size: 30px; letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+  .savings {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px; font-weight: 600;
+    color: var(--good);
+    background: var(--good-dim);
+    border: 1px solid rgba(52,199,89,0.2);
+    border-radius: 10px;
+    padding: 9px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cta {
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    border-radius: 16px;
+    font-family: var(--ff-display);
+    font-weight: 700; font-size: 16px;
+    color: #fff;
+    background: var(--grad);
+    background-size: 160% 160%;
+    box-shadow: 0 14px 32px -12px rgba(45,138,207,0.5), 0 0 0 1px rgba(255,255,255,0.15) inset;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    animation: ctaPulse 3.6s ease-in-out infinite, ctaShift 8s ease infinite;
+  }
+  .cta:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 20px 44px -12px rgba(45,138,207,0.7); }
+  .cta:active { transform: translateY(0) scale(0.98); }
+  .cta:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+  @keyframes ctaPulse {
+    0%,100% { box-shadow: 0 14px 32px -12px rgba(45,138,207,0.5), 0 0 0 1px rgba(255,255,255,0.15) inset; }
+    50% { box-shadow: 0 16px 44px -8px rgba(45,138,207,0.7), 0 0 0 1px rgba(255,255,255,0.2) inset; }
+  }
+  @keyframes ctaShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+  .reassure {
+    display: flex; align-items: center; justify-content: center;
+    gap: 7px; margin-top: 14px;
+    font-size: 12px; color: var(--muted);
+  }
+  .reassure svg { width: 14px; height: 14px; color: var(--good); }
+
+  .pay { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+  .pay .chip {
+    font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .pay .chip:hover { background: var(--accent-mid); border-color: var(--accent-1); }
+
+  .trust-row {
+    display: grid; gap: 16px;
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+  @media (min-width: 720px) { .trust-row { grid-template-columns: 1fr 1.2fr; } }
+  .guarantee { padding: 20px; display: flex; gap: 14px; align-items: flex-start; }
+  .guarantee .seal {
+    flex: none; width: 48px; height: 48px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--accent-mid);
+    border: 1px solid var(--border-strong);
+    font-size: 20px;
+    color: var(--accent-2);
+  }
+  .guarantee h3 { font-family: var(--ff-display); font-size: 14px; font-weight: 600; }
+  .guarantee p { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+  .testimonial { padding: 20px; }
+  .testimonial .stars { font-size: 14px; }
+  .testimonial blockquote {
+    font-size: 14px; margin: 9px 0 12px;
+    line-height: 1.6; color: var(--text);
+  }
+  .testimonial .who { display: flex; align-items: center; gap: 10px; }
+  .testimonial .av {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--grad); display: grid; place-items: center;
+    font-weight: 700; font-size: 13px; color: #fff;
+  }
+  .testimonial .who b { font-size: 13px; }
+  .testimonial .who .verified { font-size: 11.5px; color: var(--good); display: flex; align-items: center; gap: 4px; }
+  .testimonial .who .verified svg { width: 12px; height: 12px; }
+
+  footer {
+    position: relative; z-index: 1;
+    text-align: center;
+    color: var(--muted-2);
+    font-size: 12.5px;
+    padding: 32px 20px 36px;
+    line-height: 1.7;
+  }
+  footer b { color: var(--muted); font-weight: 600; }
+
+  /* Demo modal */
+  .demo-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: modalFadeIn 0.4s ease;
+  }
+  .demo-modal-overlay.active {
+    display: flex;
+  }
+  .demo-modal {
+    max-width: 440px;
+    width: 90%;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 40px 32px 32px;
+    box-shadow: 0 32px 80px -24px rgba(0,0,0,0.3);
+    animation: modalSlideUp 0.5s cubic-bezier(0.16,1,0.3,1);
+    position: relative;
+    overflow: hidden;
+  }
+  .demo-modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--grad);
+  }
+  .demo-modal .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-mid);
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    margin: 0 auto 16px;
+  }
+  .demo-modal h2 {
+    font-family: var(--ff-display);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .demo-modal p {
+    color: var(--muted);
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+  .demo-modal .highlight {
+    background: var(--accent-mid);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 16px 0 20px;
+    font-size: 13px;
+    color: var(--text);
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .demo-modal .highlight strong {
+    color: var(--accent-2);
+  }
+  .demo-modal .btn-close {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: var(--grad);
+    color: #fff;
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px -8px rgba(45,138,207,0.5);
+  }
+  .demo-modal .btn-close:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px -8px rgba(45,138,207,0.7);
+  }
+  .demo-modal .btn-close:active {
+    transform: scale(0.96);
+  }
+  .demo-modal .footnote {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted-2);
+    margin-top: 14px;
+  }
+
+  @keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
+
+<!-- Demo Modal -->
+<div class="demo-modal-overlay" id="demoModal">
+  <div class="demo-modal">
+    <div class="icon">🛍️</div>
+    <h2>Demo Checkout</h2>
+    <p>This is a design prototype of a premium</p>
+    <p style="font-weight: 600; color: var(--text);">Apple-style product checkout page.</p>
+    <div class="highlight">
+      <strong>✦ Premium UI/UX ✦</strong><br />
+      Glassmorphism · Smooth animations · Fully responsive · Accessible
+    </div>
+    <button class="btn-close" id="closeModalBtn">Continue browsing</button>
+    <p class="footnote">No real payment is processed · Demo only</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">i</span>
+      iTech
+    </div>
+    <span class="secure-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      Secure Checkout
+    </span>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT -->
+    <div>
+      <section class="card hero">
+        <div class="phone" aria-hidden="true">
+          <img src="iphone.jpg" alt="iPhone 17 Sky Blue" />
+        </div>
+        <div class="hero-content">
+          <div class="eyebrow">New</div>
+          <h1>iPhone 17<br />Sky Blue</h1>
+          <p class="subtitle">Powerful. Beautiful. Built for Apple Intelligence. The latest iPhone with an all-new Sky Blue finish.</p>
+          <div class="rating">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="score">4.9</span>
+            <span class="count">· 8,412 reviews</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="sec-head" style="margin-top:24px;">
+        <h2>Choose your storage</h2>
+        <span class="hint">More storage, more possibilities</span>
+      </div>
+
+      <div class="stack" id="tiers" role="radiogroup" aria-label="Choose your storage">
+        <!-- tiers injected by JS -->
+      </div>
+
+      <section class="card gifts-card" style="margin-top:22px;">
+        <div class="sec-head" style="margin:0 0 6px;">
+          <h2>Included with your iPhone</h2>
+          <span class="hint" id="giftsTotalLabel">R0 included</span>
+        </div>
+        <div class="gift-meter" aria-hidden="true"><span id="giftBar"></span></div>
+        <div class="gifts" id="gifts"></div>
+      </section>
+
+      <div class="trust-row">
+        <section class="card guarantee">
+          <span class="seal" aria-hidden="true">🔒</span>
+          <div>
+            <h3>Genuine Apple Product</h3>
+            <p>1-Year Apple Warranty · Secure Checkout · Fast Nationwide Delivery · 30-Day Returns</p>
+          </div>
+        </section>
+        <section class="card testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <blockquote>"The Sky Blue finish looks incredible and the battery life easily lasts all day. The smoothest iPhone I've ever owned."</blockquote>
+          <div class="who">
+            <span class="av" aria-hidden="true">MR</span>
+            <div>
+              <b>Maya R.</b>
+              <span class="verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Verified Buyer</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="summary-wrap">
+      <section class="card summary" aria-live="polite">
+        <h2>Order summary</h2>
+        <div class="line">
+          <span class="lbl">Device</span>
+          <span class="val" id="sumDeviceVal">iPhone 17</span>
+        </div>
+        <div class="line">
+          <span class="lbl">Colour</span>
+          <span class="val">Sky Blue</span>
+        </div>
+        <div class="line">
+          <span class="lbl">Storage <small id="sumStorageSub"></small></span>
+          <span class="val" id="sumStorageVal"></span>
+        </div>
+        <div class="line">
+          <span class="lbl">Delivery</span>
+          <span class="val free">Free</span>
+        </div>
+        <div class="line">
+          <span class="lbl">AppleCare+</span>
+          <span class="val free">Included</span>
+        </div>
+        <div class="total-line">
+          <span class="t-lbl">Today's Total</span>
+          <span class="t-val" id="sumTotal">R12 000</span>
+        </div>
+        <div class="savings" id="sumSavings">You save R1 000</div>
+
+        <button class="cta" id="checkoutBtn" type="button">Proceed to Checkout →</button>
+
+        <div class="reassure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Guaranteed safe &amp; secure
+        </div>
+        <div class="pay" aria-label="Accepted payment methods">
+          <span class="chip">Visa</span>
+          <span class="chip">Mastercard</span>
+          <span class="chip">Apple Pay</span>
+          <span class="chip">Ozow</span>
+          <span class="chip">Instant EFT</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div><b>iTech</b> · Premium Apple Devices</div>
+  © 2026 iTech · Demo Store — No real payment is processed.
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    var tiers = [
+      { id: "128gb", name: "128GB", storage: 128, price: 10999, was: 11999, savePct: 8, badge: "" },
+      { id: "256gb", name: "256GB", storage: 256, price: 12000, was: 13999, savePct: 14, badge: "MOST POPULAR" },
+      { id: "512gb", name: "512GB", storage: 512, price: 14999, was: 17999, savePct: 17, badge: "BEST VALUE" }
+    ];
+
+    var gifts = [
+      { name: "1-Year Apple Warranty", value: 0, minStorage: 128, icon: "🛡️" },
+      { name: "AppleCare+ (1yr)", value: 0, minStorage: 128, icon: "💎" },
+      { name: "Fast Charger (20W)", value: 599, minStorage: 256, icon: "🔋" },
+      { name: "AirPods 4 (Lightning)", value: 2199, minStorage: 512, icon: "🎧" }
+    ];
+
+    var selectedIndex = 1;
+
+    var tiersEl = document.getElementById("tiers");
+    var giftsEl = document.getElementById("gifts");
+    var giftBar = document.getElementById("giftBar");
+    var giftsTotalLabel = document.getElementById("giftsTotalLabel");
+
+    var modal = document.getElementById("demoModal");
+    var closeBtn = document.getElementById("closeModalBtn");
+
+    function formatZAR(n) {
+      return "R" + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
+    tiers.forEach(function (t, i) {
+      var card = document.createElement("div");
+      card.className = "tier" + (i === selectedIndex ? " selected" : "");
+      card.setAttribute("role", "radio");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-checked", i === selectedIndex ? "true" : "false");
+      card.dataset.index = i;
+
+      var badgeHtml = t.badge ? '<span class="badge">' + t.badge + "</span>" : "";
+      var monthly = Math.round(t.price / 24);
+
+      card.innerHTML =
+        badgeHtml +
+        '<span class="radio" aria-hidden="true"><span class="dot"></span></span>' +
+        '<span class="info">' +
+          '<span class="name">' + t.name + "</span>" +
+          '<span class="meta">' + t.storage + 'GB · <span class="per">from ' + formatZAR(monthly) + '/mo</span></span>' +
+          '<span class="save-chip">Save ' + t.savePct + "%</span>" +
+        "</span>" +
+        '<span class="price-col">' +
+          '<span class="price">' + formatZAR(t.price) + "</span><br>" +
+          '<span class="was">' + formatZAR(t.was) + "</span>" +
+        "</span>";
+
+      card.addEventListener("click", function () { select(i); });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(i); }
+        else if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); select((i + 1) % tiers.length); }
+        else if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); select((i - 1 + tiers.length) % tiers.length); }
+      });
+
+      tiersEl.appendChild(card);
+    });
+
+    gifts.forEach(function (g, i) {
+      var row = document.createElement("div");
+      row.className = "gift";
+      row.dataset.index = i;
+      row.innerHTML =
+        '<span class="ico" aria-hidden="true">' + g.icon + "</span>" +
+        '<span class="g-info">' +
+          '<span class="g-name">' + g.name + "</span>" +
+          '<span class="g-req"></span>' +
+        "</span>" +
+        '<span class="g-val">' + (g.value > 0 ? formatZAR(g.value) : "Included") + "</span>";
+      giftsEl.appendChild(row);
+    });
+
+    function unlockedGiftValue(storage) {
+      return gifts.reduce(function (sum, g) {
+        return sum + (storage >= g.minStorage ? g.value : 0);
+      }, 0);
+    }
+
+    function select(i) {
+      selectedIndex = i;
+      render();
+      var cards = tiersEl.querySelectorAll(".tier");
+      if (cards[i]) cards[i].focus();
+    }
+
+    function render() {
+      var t = tiers[selectedIndex];
+      var maxStorage = 512;
+
+      var cards = tiersEl.querySelectorAll(".tier");
+      cards.forEach(function (c, i) {
+        var on = i === selectedIndex;
+        c.classList.toggle("selected", on);
+        c.setAttribute("aria-checked", on ? "true" : "false");
+        c.setAttribute("tabindex", on ? "0" : "-1");
+      });
+
+      var giftRows = giftsEl.querySelectorAll(".gift");
+      gifts.forEach(function (g, i) {
+        var unlocked = t.storage >= g.minStorage;
+        var row = giftRows[i];
+        row.classList.toggle("unlocked", unlocked);
+        row.classList.toggle("locked", !unlocked);
+        var req = row.querySelector(".g-req");
+        if (g.minStorage === 128) req.textContent = "✓ Included";
+        else req.textContent = unlocked ? "✓ Unlocked" : "🔒 Unlocks at " + g.minStorage + "GB";
+        var valEl = row.querySelector(".g-val");
+        if (g.value === 0) valEl.textContent = "Included";
+        else valEl.textContent = formatZAR(g.value);
+      });
+
+      var giftVal = unlockedGiftValue(t.storage);
+      var fullGiftVal = unlockedGiftValue(maxStorage);
+      giftBar.style.width = Math.round((giftVal / fullGiftVal) * 100) + "%";
+      giftsTotalLabel.textContent = (giftVal > 0 ? formatZAR(giftVal) : "R0") + " included";
+
+      document.getElementById("sumStorageSub").textContent = t.storage + "GB";
+      document.getElementById("sumStorageVal").textContent = formatZAR(t.price);
+      document.getElementById("sumDeviceVal").textContent = "iPhone 17";
+      document.getElementById("sumTotal").textContent = formatZAR(t.price);
+
+      var savings = t.was - t.price;
+      document.getElementById("sumSavings").textContent = "You save " + formatZAR(savings) + " today";
+    }
+
+    document.getElementById("checkoutBtn").addEventListener("click", function () {
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+
+    function closeModal() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && modal.classList.contains("active")) {
+        closeModal();
+      }
+    });
+
+    render();
+  })();
+</script>
+</body>
+</html>
